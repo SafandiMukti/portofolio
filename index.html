@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safandi Mukti — Software Developer &amp; Live Production</title>
+<meta name="description" content="Informatics graduate building backend and web systems (Go, PostgreSQL, Redis, Docker, Next.js) with a live-production background in OBS streaming and event multimedia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Signature HUD overlay -->
+<div class="hud">
+  <div class="hud-item hud-rec"><span class="tally-dot"></span><span>REC</span><span class="hud-timer" id="hudTimer">00:00</span></div>
+  <div class="hud-item hud-tag">SAFANDI // DEV + LIVE</div>
+</div>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- Nav -->
+<nav class="nav">
+  <span class="nav-brand">S.M.</span>
+  <button class="lang-toggle mono" id="langToggle" type="button" aria-label="Change language / Ganti bahasa">
+    <span data-lang-opt="en">EN</span><span class="lang-sep">/</span><span data-lang-opt="id">ID</span>
+  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+    <span></span><span></span>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <a href="#about" class="nav-link" data-i18n="nav.about">Behind the Glass</a>
+    <a href="#code" class="nav-link" data-i18n="nav.code">Source Code</a>
+    <a href="#reel" class="nav-link" data-i18n="nav.reel">Reel</a>
+    <a href="#live-ops" class="nav-link" data-i18n="nav.live">Live Operations</a>
+    <a href="#design" class="nav-link" data-i18n="nav.design">Frame by Frame</a>
+    <a href="#rundown" class="nav-link" data-i18n="nav.rundown">Rundown</a>
+    <a href="#standby" class="nav-link" data-i18n="nav.standby">Standby</a>
+  </div>
+</nav>
+
+<!-- CUE 01 — HERO -->
+<header class="hero" id="hero">
+  <p class="eyebrow mono" data-reveal>CUE 01 — ON AIR</p>
+  <h1 class="hero-name">
+    <span class="line" data-hero-word>SAFANDI</span>
+    <span class="line hero-name-sub" data-hero-word>MUKTI</span>
+  </h1>
+  <p class="hero-headline" data-reveal data-i18n="hero.headline">Informatics graduate building backend and web systems, with a live-production background.</p>
+  <p class="hero-sub" data-reveal>GO · POSTGRESQL · REDIS · DOCKER · NEXT.JS · UNITY</p>
+  <div class="hero-cta" data-reveal>
+    <a href="#reel" class="btn btn-primary"><b data-i18n="hero.cta1">View Projects</b> <span>→</span></a>
+    <a href="https://github.com/SafandiMukti" target="_blank" rel="noopener" class="btn btn-ghost">GitHub <span>→</span></a>
+    <a href="#standby" class="btn btn-ghost"><b data-i18n="hero.cta2">Contact Me</b> <span>→</span></a>
+  </div>
+
+  <aside class="signal mono" data-reveal aria-label="TokoHerbal service status">
+    <div class="signal-head"><span class="tally-dot ok"></span><span data-i18n="signal.title">SIGNAL CHECK — TOKOHERBAL</span></div>
+    <div class="signal-cmd">$ docker compose ps</div>
+    <ul>
+      <li><span>web</span><span class="up">healthy</span></li>
+      <li><span>auth-service</span><span class="up">healthy</span></li>
+      <li><span>product-service</span><span class="up">healthy</span></li>
+      <li><span>postgres</span><span class="up">healthy</span></li>
+      <li><span>redis</span><span class="up">healthy</span></li>
+    </ul>
+  </aside>
+
+  <div class="scroll-cue mono">SCROLL<span class="scroll-line"></span></div>
+</header>
+
+<!-- CUE 02 — ABOUT -->
+<section class="section about" id="about">
+  <p class="eyebrow mono" data-reveal>CUE 02 — BEHIND THE GLASS</p>
+  <div class="about-grid">
+    <p class="about-text" data-reveal data-i18n="about.p1">
+      I'm an Informatics graduate (2026) from <strong>Universitas Amikom Purwokerto</strong>. I build web backends and
+      interactive 3D apps. My latest project, <strong>TokoHerbal</strong>, is a full-stack store made of Go services,
+      PostgreSQL, Redis, and Docker, with automated tests and CI.
+    </p>
+    <p class="about-text" data-reveal data-i18n="about.p2">
+      Alongside my degree I worked in live production: LED/Videotron visuals, OBS Studio streaming, and tournament
+      broadcasts. That work taught me to stay calm when something breaks while the show is live. I bring the same habit
+      to debugging, monitoring, and keeping a system running.
+    </p>
+  </div>
+  <div class="about-stats" data-reveal>
+    <div class="stat"><span class="stat-num mono">5</span><span class="stat-label" data-i18n="stat.1">Services in one Docker Compose stack</span></div>
+    <div class="stat"><span class="stat-num mono">3.68</span><span class="stat-label">GPA / 4.00</span></div>
+    <div class="stat"><span class="stat-num mono">2022</span><span class="stat-label" data-i18n="stat.3">First production role</span></div>
+  </div>
+</section>
+
+<!-- CUE 03 — CODE -->
+<section class="section" id="code">
+  <p class="eyebrow mono" data-reveal>CUE 03 — SOURCE CODE</p>
+  <h2 class="section-title" data-reveal data-i18n="code.title">Programming &amp; Development</h2>
+  <p class="about-text narrow" data-reveal data-i18n="code.lead">
+    I'm strongest on the backend and on getting a system from "works on my laptop" to "runs in containers with tests
+    and CI". I also build interfaces and 3D experiences.
+  </p>
+
+  <div class="skill-grid">
+    <div class="skill" data-reveal>
+      <h3 data-i18n="skill.backend">Backend</h3>
+      <div class="tool-strip"><span>Go</span><span>REST API</span><span>JWT</span><span>ASP.NET</span><span>Python</span></div>
+    </div>
+    <div class="skill" data-reveal>
+      <h3 data-i18n="skill.data">Data &amp; Cache</h3>
+      <div class="tool-strip"><span>PostgreSQL</span><span>SQL</span><span>Redis</span></div>
+    </div>
+    <div class="skill" data-reveal>
+      <h3>Frontend</h3>
+      <div class="tool-strip"><span>Next.js</span><span>React</span><span>TypeScript</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    </div>
+    <div class="skill" data-reveal>
+      <h3 data-i18n="skill.devops">DevOps &amp; Tools</h3>
+      <div class="tool-strip"><span>Docker</span><span>Docker Compose</span><span>GitHub Actions</span><span>Git</span></div>
+    </div>
+    <div class="skill" data-reveal>
+      <h3 data-i18n="skill.3d">3D &amp; Game</h3>
+      <div class="tool-strip"><span>Unity</span><span>C#</span><span>Blender</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CUE 04 — REEL / PROJECTS -->
+<section class="section reel" id="reel">
+  <p class="eyebrow mono" data-reveal>CUE 04 — REEL</p>
+  <h2 class="section-title" data-reveal data-i18n="reel.title">Selected Work</h2>
+
+  <div class="project-grid">
+    <a class="project-card featured" href="https://github.com/SafandiMukti/tokoherbal" target="_blank" rel="noopener" data-reveal>
+      <div class="project-thumb thumb-0">
+        <img src="images/tokoherbal.jpg" alt="TokoHerbal storefront: herbal product catalogue with category shelf" width="1280" height="860" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="project-info">
+        <span class="project-tag mono">GO · POSTGRESQL · REDIS · DOCKER · NEXT.JS</span>
+        <h3>TokoHerbal — Full-Stack Store</h3>
+        <p data-i18n="toko.desc">A herbal products store split into an auth service and a product service, each with its own PostgreSQL database, plus a Redis cache and a Next.js frontend. Everything runs with one <code>docker compose up</code>.</p>
+        <ul class="proj-points">
+          <li data-i18n="toko.p1">JWT access tokens with rotating refresh tokens</li>
+          <li data-i18n="toko.p2">Redis cache and per-IP rate limiting that fail open when Redis is down</li>
+          <li data-i18n="toko.p3">Circuit breaker between services, so a failing dependency doesn't hang requests</li>
+          <li data-i18n="toko.p4">Stock is decremented atomically inside a database transaction</li>
+          <li data-i18n="toko.p5">Separate customer and admin roles; admin accounts can't place orders</li>
+          <li data-i18n="toko.p6">Unit tests and a GitHub Actions pipeline</li>
+        </ul>
+        <span class="project-link" data-i18n="toko.link">View Source on GitHub →</span>
+      </div>
+    </a>
+
+    <a class="project-card featured reverse" href="https://safandimukti.github.io/VirtualTourAmikomPurwokerto/" target="_blank" rel="noopener" data-reveal>
+      <div class="project-thumb thumb-1">
+        <img src="images/virtualtour.jpg" alt="Interactive 3D Virtual Tour — Universitas Amikom Purwokerto" width="1400" height="788" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="project-info">
+        <span class="project-tag mono">UNITY · BLENDER · C#</span>
+        <h3>Interactive 3D Virtual Tour</h3>
+        <p data-i18n="vt.desc">Universitas Amikom Purwokerto — an interactive virtual tour that helps prospective students explore the campus layout in 3D. I handled the building layout, environment, UI/UX, and the Unity build end to end. This was my final project.</p>
+        <span class="project-link" data-i18n="vt.link">View Live Demo →</span>
+      </div>
+    </a>
+
+    <div class="project-card" data-reveal>
+      <div class="project-thumb thumb-3">
+        <img src="images/archonic.jpg" alt="Archonic — property marketplace website" width="1400" height="788" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="project-info">
+        <span class="project-tag mono">ASP.NET · ROLE-BASED ACCESS</span>
+        <h3>Archonic — Property Marketplace</h3>
+        <p data-i18n="arch.desc">A marketplace web app for buying, renting, and listing properties (houses, boarding rooms, apartments) with role-based access control and features for both buyers and sellers. Built with ASP.NET in Visual Studio.</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-reveal>
+      <div class="project-thumb thumb-2">
+        <img src="images/layout.jpg" alt="Tournament online live streaming layout in OBS Studio" width="1400" height="788" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="project-info">
+        <span class="project-tag mono">OBS · LIVE STREAMING</span>
+        <h3>Tournament Live Streaming Layout</h3>
+        <p data-i18n="obs.desc">Designed and operated the on-screen layout for online tournament broadcasts: scene composition, overlays, and real-time scene switching in OBS Studio.</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://s.id/X0NJeU" target="_blank" rel="noopener" class="reel-archive-link" data-reveal>
+    <span class="mono" data-i18n="reel.archive">FULL DOCUMENTATION &amp; DESIGN ARCHIVE — GOOGLE DRIVE</span>
+    <span>→</span>
+  </a>
+</section>
+
+<!-- CUE 05 — LIVE OPERATIONS -->
+<section class="section experience" id="live-ops">
+  <p class="eyebrow mono" data-reveal>CUE 05 — LIVE OPERATIONS</p>
+  <h2 class="section-title" data-reveal data-i18n="live.title">Event Multimedia &amp; Live Production</h2>
+  <p class="about-text narrow" data-reveal data-i18n="live.lead">My second track. Live events are where I learned to work under real-time pressure with a team.</p>
+
+  <div class="log-entry" data-reveal>
+    <div class="log-time mono">SEP 2024 — FEB 2025</div>
+    <div class="log-body">
+      <h3>Production Crew <span class="log-company">— Ampu Studio</span></h3>
+      <ul>
+        <li data-i18n="ampu.1">Supported event production and live streaming operations as part of the production crew.</li>
+        <li data-i18n="ampu.2">Assisted with backstage streaming operations, including OBS Studio setup and management during live events.</li>
+        <li data-i18n="ampu.3">Prepared and managed screen layouts and visual content used during livestreaming.</li>
+        <li data-i18n="ampu.4">Worked as an event photographer when required, documenting campus activities and events.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="log-entry" data-reveal>
+    <div class="log-time mono">OCT 2022 — MAR 2024</div>
+    <div class="log-body">
+      <h3>Event Organizer / Multimedia Crew <span class="log-company">— Esport Arena</span></h3>
+      <ul>
+        <li data-i18n="esa.1">Supported the organization and execution of offline and online esports tournaments.</li>
+        <li data-i18n="esa.2">Assisted with LED/Videotron visual presentation during offline tournaments.</li>
+        <li data-i18n="esa.3">Operated OBS Studio for online tournament livestreams, managing streaming scenes and screen layouts.</li>
+        <li data-i18n="esa.4">Coordinated technical and visual requirements with the event team during tournament execution.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CUE 06 — DESIGN -->
+<section class="section experience" id="design">
+  <p class="eyebrow mono" data-reveal>CUE 06 — FRAME BY FRAME</p>
+  <h2 class="section-title" data-reveal data-i18n="design.title">Creative &amp; Visual Design</h2>
+
+  <div class="log-entry" data-reveal>
+    <div class="log-time mono">2022 — PRESENT</div>
+    <div class="log-body">
+      <h3>Designer &amp; Event Photographer <span class="log-company">— ORECIMA</span></h3>
+      <ul>
+        <li data-i18n="ore.1">Designed visual materials for community events, including event banners and T-shirt designs.</li>
+        <li data-i18n="ore.2">Created visual assets tailored to each event's theme and requirements.</li>
+        <li data-i18n="ore.3">Documented community events through event photography.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tool-strip" data-reveal>
+    <span>Adobe Illustrator</span><span>Photoshop</span><span>Blender</span><span>CapCut</span><span>Event Photography</span>
+  </div>
+</section>
+
+<!-- CUE 07 — RUNDOWN / TIMELINE -->
+<section class="section rundown" id="rundown">
+  <p class="eyebrow mono" data-reveal>CUE 07 — RUNDOWN</p>
+  <h2 class="section-title" data-reveal data-i18n="run.title">Journey</h2>
+
+  <div class="timeline">
+    <div class="tl-item" data-reveal>
+      <div class="tl-time mono">2022</div>
+      <div class="tl-line"></div>
+      <div class="tl-content">
+        <h4 data-i18n="tl.1.h">Started at ORECIMA &amp; Esport Arena</h4>
+        <p data-i18n="tl.1.p">First steps into event production: visual design, photography, and multimedia crew work.</p>
+      </div>
+    </div>
+    <div class="tl-item" data-reveal>
+      <div class="tl-time mono">2022 – 2026</div>
+      <div class="tl-line"></div>
+      <div class="tl-content">
+        <h4>B.Sc. Informatics — Universitas Amikom Purwokerto</h4>
+        <p data-i18n="tl.2.p">GPA 3.68/4.00. Final project: an interactive 3D Virtual Tour built with Unity and Blender.</p>
+      </div>
+    </div>
+    <div class="tl-item" data-reveal>
+      <div class="tl-time mono">2024 – 2025</div>
+      <div class="tl-line"></div>
+      <div class="tl-content">
+        <h4>Production Crew — Ampu Studio</h4>
+        <p data-i18n="tl.3.p">Backstage streaming operations and live event visual production.</p>
+      </div>
+    </div>
+    <div class="tl-item" data-reveal>
+      <div class="tl-time mono">2026</div>
+      <div class="tl-line"></div>
+      <div class="tl-content">
+        <h4 data-i18n="tl.4.h">Built TokoHerbal</h4>
+        <p data-i18n="tl.4.p">A full-stack store with Go services, PostgreSQL, Redis, Docker, tests, and CI, built step by step to learn how real backends are put together.</p>
+      </div>
+    </div>
+    <div class="tl-item" data-reveal>
+      <div class="tl-time mono">NOW</div>
+      <div class="tl-line"></div>
+      <div class="tl-content">
+        <h4 data-i18n="tl.5.h">Open to Work</h4>
+        <p data-i18n="tl.5.p">Looking for junior roles in backend, web, or software development and IT. Also open to game development and event multimedia / live production work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUE 08 — STANDBY / CONTACT -->
+<section class="section standby" id="standby">
+  <p class="eyebrow mono" data-reveal>CUE 08 — STANDBY</p>
+  <h2 class="standby-title" data-reveal data-i18n="standby.title">Ready for<br>the next cue.</h2>
+  <p class="about-text narrow" data-reveal data-i18n="standby.lead">Have a project that needs software, a web app, or a live production setup? Let's talk.</p>
+
+  <div class="contact-links" data-reveal>
+    <a href="mailto:safandimukti@gmail.com" class="contact-link">
+      <span class="contact-label mono">EMAIL</span>
+      <span class="contact-value">safandimukti@gmail.com</span>
+    </a>
+    <a href="https://github.com/SafandiMukti" target="_blank" rel="noopener" class="contact-link">
+      <span class="contact-label mono">GITHUB</span>
+      <span class="contact-value">/SafandiMukti</span>
+    </a>
+    <a href="https://www.linkedin.com/in/safandimukti/" target="_blank" rel="noopener" class="contact-link">
+      <span class="contact-label mono">LINKEDIN</span>
+      <span class="contact-value">/in/safandimukti</span>
+    </a>
+    <a href="https://wa.me/6289653743737" target="_blank" rel="noopener" class="contact-link">
+      <span class="contact-label mono">WHATSAPP</span>
+      <span class="contact-value">+6289653743737</span>
+    </a>
+  </div>
+
+  <footer class="footer mono">© 2026 SAFANDI MUKTI — OFF AIR</footer>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
